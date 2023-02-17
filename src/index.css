@@ -28,6 +28,16 @@ body {
     color: #94e2d5;
 }
 
+label {
+    flex-wrap: nowrap;
+}
+.command-input-container {
+    display: flex;
+}
+.input-field-container {
+    margin-left: 5px;
+    flex: 2;
+}
 .command-input,
 .command-input:focus,
 .command-input:active {
@@ -39,5 +49,4 @@ body {
     appearance: none;
     display: inline-block;
     font-size: 20px;
-    width: 75%;
 }
