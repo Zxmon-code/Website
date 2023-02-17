@@ -27,6 +27,8 @@ function commandHandler(command) {
     case "search":
       console.log("commandHandler working");
       searchCommand(commandArray);
+    case "google":
+      googleSearchCommand(commandArray);
     case "help":
       helpCommand(commandArray);
     default:
@@ -56,7 +58,7 @@ function searchCommand(commandArray) {
 function googleSearchCommand(commandArray) {
   let searchString = "";
   commandArray.forEach((element) => {
-    if (element.toLowerCase() === "search") {
+    if (element.toLowerCase() === "google") {
     } else {
       searchString += " " + element;
     }
