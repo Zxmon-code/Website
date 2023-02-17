@@ -26,17 +26,18 @@ function commandHandler(command) {
   switch (getCommandUsed(command)) {
     case "search":
       console.log("commandHandler working");
-      searchCommand(commandArray);
+      searchCommand(commandArray, commandArray[0]);
+      break;
     case "google":
-      googleSearchCommand(commandArray);
+      searchCommand(commandArray, commandArray[0]);
+      break;
+    case "github":
+      searchCommand(commandArray, commandArray[0]);
+      break;
     case "help":
       helpCommand(commandArray);
     default:
       helpCommand(["help"]);
-  }
-  if (getCommandUsed === "search") {
-    console.log("commandHandler working");
-    searchCommand(command.split(" "));
   }
 }
 
@@ -44,26 +45,30 @@ function getCommandUsed(command) {
   return command.split(" ")[0].toLowerCase();
 }
 
-function searchCommand(commandArray) {
+function searchCommand(commandArray, searchEngine) {
   let searchString = "";
   commandArray.forEach((element) => {
-    if (element.toLowerCase() === "search") {
+    if (element.toLowerCase() === searchEngine) {
     } else {
       searchString += " " + element;
     }
   });
-  window.open(defaultSearchEngine + searchString, "_blank").focus();
-}
-
-function googleSearchCommand(commandArray) {
-  let searchString = "";
-  commandArray.forEach((element) => {
-    if (element.toLowerCase() === "google") {
-    } else {
-      searchString += " " + element;
-    }
-  });
-  window.open(googleSearch + searchString, "_blank").focus();
+  switch (searchEngine) {
+    case "search":
+      console.log("fuck");
+      window.open(defaultSearchEngine + searchString, "_blank").focus();
+      break;
+    case "google":
+      console.log("google");
+      window.open(googleSearch + searchString, "_blank").focus();
+      break;
+    case "github":
+      window.open(githubSearch + searchString, "_blank").focus();
+      break;
+    default:
+      break;
+  }
+  
 }
 
 function helpCommand(commandArray) {
