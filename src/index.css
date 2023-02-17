@@ -24,9 +24,19 @@ body {
     color: #cdd6f4;
 }
 
-.command-input {
-    border: 0;
-    background-color: #45475a;
-    width: 70%;
-    border-radius: 5px;
+.terminal-output {
+    color: #94e2d5;
+}
+
+.command-input,
+.command-input:focus,
+.command-input:active {
+    background-color: transparent;
+    color: #b4befe;
+    border: none;
+    outline: none !important;
+    background-color: transparent;
+    appearance: none;
+    display: inline-block;
+    font-size: 20px;
 }
