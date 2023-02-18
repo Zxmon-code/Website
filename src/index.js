@@ -3,6 +3,7 @@ let defaultSearchEngine = "https://duckduckgo.com/";
 let githubSearch = "https://github.com/search?q=";
 let googleSearch = "https://google.com/search?q=";
 let stackoverflowSearch = "https://stackoverflow.com/search?q=";
+let nixosPackageSearch = "https://search.nixos.org/packages?query="
 
 let input = document.getElementById("input");
 let output = document.getElementById("output");
@@ -64,6 +65,9 @@ function searchCommand(commandArray, searchEngine) {
       break;
     case "github":
       window.open(githubSearch + searchString, "_blank").focus();
+      break;
+    case "nixos":
+      window.open(nixosPackageSearch + searchString, "_blank").focus();
       break;
     default:
       break;
