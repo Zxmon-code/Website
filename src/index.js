@@ -35,6 +35,9 @@ function commandHandler(command) {
     case "github":
       searchCommand(commandArray, commandArray[0]);
       break;
+    case "nixos":
+      searchCommand(commandArray, commandArray[0]);
+      break;
     case "help":
       helpCommand(commandArray);
     default:
