@@ -90,16 +90,13 @@ function searchCommand(commandArray, searchEngine) {
 }
 
 function helpCommand(commandArray) {
-  if (commandArray.length === 1) {
     printText(
       `Available Commands:<br>
       - search [prompt]<br>
       - google [prompt]<br>
-      - github [prompt]<br>
+      - github [option] [prompt]<br>
       - youtube [prompt]<br>`
-    );
-  } else {
-  }
+    )
 }
 
 function printText(text) {
